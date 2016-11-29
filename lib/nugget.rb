@@ -14,6 +14,7 @@ require 'open-uri'
 require 'iconv' if RUBY_VERSION =~ /1.8/
 require 'timeout'
 require 'failbot/exit_hook'
+require 'datadog/statsd'
 
 __DIR__ = File.dirname(__FILE__)
 
@@ -29,6 +30,7 @@ require 'nugget/web'
 require 'nugget/backstop'
 require 'nugget/statsd'
 require 'nugget/version'
+require 'nugget/datadog'
 
 TIMEOUT = 180
 

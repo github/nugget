@@ -81,6 +81,25 @@ module Nugget
       :default => false,
       :description => "Path to where results file is written/read."
 
+    option :datadog_host,
+      :long => "--datadoghost HOST",
+      :default => "localhost",
+      :description => "datadog host",
+
+    option :datadog_port,
+      :long => "--datadogport PORT",
+      :default => 8125,
+      :description => "datadog port",
+
+    option :datadog_prefix,
+      :long => "--datadogprefix PREFIX"
+      :description => "datadog prefix"
+
+    option :datadog_tags,
+      :long => "--datadogtags TAGS"
+      :description => "tags to send to datadog, in key1:val1;key2:val2 format"
+      :default => ""
+
     option :help,
       :short => "-h",
       :long => "--help",
