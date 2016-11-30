@@ -145,6 +145,10 @@ module Nugget
       if Nugget::Config.statsd_host
         Nugget::NStatsd.send_metrics(test, result, response)
       end
+
+      if Nugget::Config.datadog_prefix
+        Nugget::DataDog.send_metrics(test, result, response)
+      end
     end
 
   end

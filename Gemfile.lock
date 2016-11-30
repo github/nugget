@@ -19,6 +19,7 @@ GEM
   remote: https://rubygems.org/
   specs:
     daemons (1.1.9)
+    dogstatsd-ruby (2.1.0)
     ethon (0.7.1)
       ffi (>= 1.3.0)
     eventmachine (1.0.9.1)
@@ -45,7 +46,11 @@ PLATFORMS
 
 DEPENDENCIES
   bundler (~> 1.2)
+  dogstatsd-ruby (~> 2.1.0)
   failbot
   nugget!
   rake
   statsd-ruby!
+
+BUNDLED WITH
+   1.13.6

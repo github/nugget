@@ -1,16 +1,31 @@
 module Nugget
   class NStatsd # NStatsd since Statsd collides
 
+    def self.send_metrics(name, result, response)
+      statsd = self.stats
+      send_test_result(statsd, name, result, response)
+      send_test_timings(statsd, name, result, response)
+    end
+
+    protected
+
     def self.stats
       @stats ||= Statsd.new(Nugget::Config.statsd_host, Nugget::Config.statsd_port, Nugget::Config.statsd_key).tap do |statsd|
         statsd.namespace =  Nugget::Config.statsd_namespace
       end
     end
 
-    def self.send_metrics(name, result, response)
-      statsd = Nugget::NStatsd.stats
-      send_test_result(statsd, name, result, response)
-      send_test_timings(statsd, name, result, response)
+    def self.gauge(statsd, name, stat, boolean)
+      count = boolean ? 1 : 0
+      metric = "#{name}.#{stat}.count"
+      statsd.gauge(metric, count)
+      Nugget::Log.debug("Sending the following to statsd: #{metric}: #{count}")
+    end
+
+    def self.timing(statsd, name, stat, value)
+      key = "#{name}.#{stat}"
+      statsd.timing(key, value)
+      Nugget::Log.debug("Sending the following to statsd: #{key}: #{value}")
     end
 
     private
@@ -38,23 +53,15 @@ module Nugget
       gauge(statsd, name, "failures.timeout", timeout)
     end
 
-    def self.gauge(statsd, name, stat, boolean)
-      count = boolean ? 1 : 0
-      metric = "#{name}.#{stat}.count"
-      statsd.gauge(metric, count)
-      Nugget::Log.debug("Sending the following to statsd: #{metric}: #{count}")
-    end
 
     def self.send_test_timings(statsd, name, result, response)
       if response
         if response == "timeout"
-	  Nugget::Log.debug("Sending the following to statsd: timeout: #{TIMEOUT}")
-          statsd.timing("#{name}.timeout", TIMEOUT)
+          timing(statsd, name, "timout", TIMEOUT)
         else
           response.each do |key, value|
             if key.to_s.include?("_time")
-              Nugget::Log.debug("Sending the following to statsd: #{key}: #{value}")
-              statsd.timing("#{name}.#{key}", value)
+              timing(statsd, name, key, value)
             end
           end
         end
