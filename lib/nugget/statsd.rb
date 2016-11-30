@@ -2,7 +2,7 @@ module Nugget
   class NStatsd # NStatsd since Statsd collides
 
     def self.send_metrics(name, result, response)
-      statsd = self.class.stats
+      statsd = self.stats
       send_test_result(statsd, name, result, response)
       send_test_timings(statsd, name, result, response)
     end

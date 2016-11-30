@@ -84,20 +84,20 @@ module Nugget
     option :datadog_host,
       :long => "--datadoghost HOST",
       :default => "localhost",
-      :description => "datadog host",
+      :description => "datadog host"
 
     option :datadog_port,
       :long => "--datadogport PORT",
       :default => 8125,
-      :description => "datadog port",
+      :description => "datadog port"
 
     option :datadog_prefix,
-      :long => "--datadogprefix PREFIX"
+      :long => "--datadogprefix PREFIX",
       :description => "datadog prefix"
 
     option :datadog_tags,
-      :long => "--datadogtags TAGS"
-      :description => "tags to send to datadog, in key1:val1;key2:val2 format"
+      :long => "--datadogtags TAGS",
+      :description => "tags to send to datadog, in key1:val1;key2:val2 format",
       :default => ""
 
     option :help,

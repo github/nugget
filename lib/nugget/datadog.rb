@@ -9,7 +9,7 @@ module Nugget
     end
 
     def self.default_tags
-      @default_tags ||= Datadog::Config.datadog_tags.split(',')
+      @default_tags ||= Nugget::Config.datadog_tags.split(',')
     end
 
     def self.gauge(client, name, stat, boolean)
@@ -24,8 +24,8 @@ module Nugget
     def self.timing(client, name, stat, value)
       key = "#{prefix}.#{stat}"
       tags = datadog_tags(name)
-      statsd.timing(key, value, :tags => tags)
-      Nugget::Log.debug("Sending the following to statsd: #{key}: #{value} (#{tags)})")
+      client.timing(key, value, :tags => tags)
+      Nugget::Log.debug("Sending the following to DataDog: #{key}: #{value} (#{tags})")
     end
 
     def self.datadog_tags(name)
