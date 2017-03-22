@@ -19,12 +19,15 @@ module Turd
               channel.send_data(stdin) if stdin
               channel.eof!
               channel.on_request("exit-status") do |_, data|
+                response[:exited] = Time.now.to_f
                 response[:exit_status] = data.read_long
               end
               channel.on_data do |_, data|
+                response[:first_stdout] ||= Time.now.to_f
                 response[:stdout] << data
               end
               channel.on_extended_data do |_, data|
+                response[:first_stderr] ||= Time.now.to_f
                 response[:stderr] << data
               end
             end
