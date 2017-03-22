@@ -73,12 +73,13 @@
   },
 
   "github_git_ssh_upload_pack": {
-    "type": "git-ssh",
+    "type": "ssh",
 
     "request": {
       "username": "git",
       "server": "github.com",
-      "command": "git-upload-pack 'tmm1/rbtrace.git'"
+      "command": "git-upload-pack 'tmm1/rbtrace.git'",
+      "stdin": "0000"
     },
 
     "response": {
