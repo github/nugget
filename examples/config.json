@@ -70,6 +70,23 @@
         "003f62998e62735538453fc434e5243ee09635c828bb refs/pull/12/head"
       ]
     }
+  },
+
+  "github_git_ssh_upload_pack": {
+    "type": "git-ssh",
+
+    "request": {
+      "username": "git",
+      "server": "github.com",
+      "command": "git-upload-pack 'tmm1/rbtrace.git'"
+    },
+
+    "response": {
+      "exit_status": 0,
+      "stdout": [
+        "003f62998e62735538453fc434e5243ee09635c828bb refs/pull/12/head"
+      ]
+    }
   }
 
 }
