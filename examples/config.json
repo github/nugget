@@ -44,7 +44,7 @@
 
     "response": {
       "response_code": 207,
-      "response_body": "aman"
+      "response_body": ["aman"]
     }
   },
 
