@@ -4,7 +4,6 @@ require 'bundler'
 require 'bundler/setup'
 
 require 'turd'
-require 'turd/ssh'
 require 'mixlib/cli'
 require 'mixlib/config'
 require 'mixlib/log'
