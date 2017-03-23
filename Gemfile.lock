@@ -4,15 +4,6 @@ GIT
   specs:
     statsd-ruby (0.3.0.github.3)
 
-GIT
-  remote: https://github.com/spraints/turd.git
-  revision: 181d84bb2648455ccc26342816c98f1d5ef4553c
-  ref: nugget-13
-  specs:
-    turd (0.0.6)
-      net-ssh
-      typhoeus
-
 PATH
   remote: .
   specs:
@@ -45,6 +36,9 @@ GEM
       daemons (~> 1.0, >= 1.0.9)
       eventmachine (~> 1.0)
       rack (~> 1.0)
+    turd (0.0.7)
+      net-ssh
+      typhoeus
     typhoeus (0.6.9)
       ethon (>= 0.7.1)
     yajl-ruby (1.2.1)
