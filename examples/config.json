@@ -44,7 +44,7 @@
 
     "response": {
       "response_code": 207,
-      "response_body": "aman"
+      "response_body": ["aman"]
     }
   },
 
@@ -68,6 +68,25 @@
 
       "response_body": [
         "003f62998e62735538453fc434e5243ee09635c828bb refs/pull/12/head"
+      ]
+    }
+  },
+
+  "github_git_ssh_upload_pack": {
+    "type": "ssh",
+
+    "request": {
+      "username": "git",
+      "server": "github.com",
+      "command": "git-upload-pack 'spraints/svn-examples.git'",
+      "key": "-----BEGIN RSA PRIVATE KEY-----\nMIIEowIBAAKCAQEAzrHXd9WKlPV2PShCVHlCi3u+sLmmMJsncD4MG6KrjJep5Uw9\noEnySeYe8VW7Gw67aoAX4noRRoooxeCodbdMbFDEuZy1zpkd04NkigeJllknp0hO\n5GuXNUb0ksfkboN/8su6h6/UNHI8FPYH3VedLLFPYjrPwkygpOoPVBSVHIhcTjsH\nAAKk/ZDzHLGoCuW+1wht+Q1U0ZneHnXQGzi6TgjxqIQXOmUUX5pMFO1GaaaYqo0f\nexCX69gSBoubONT8Gt3jXZmjel4Wr/8xsduR+DiaRjDG9Ba8x61qN+p3H2ug3gt1\nw0PgqTdCaryKCoKr/gPGLancV8ZKIwYQRq0FNwIDAQABAoIBABSFrdoVFrRhhsLd\nu3A9tfC5cZ6EYE7VKN5JGtSnmxbTfCfrIPdIQEk8EvhtRa2TEeKqIzT2X768Ov4i\npzdA4tKiVlYDjD2eEEsO8a2OwAdwhLJkSIj/cbz1dZUZScH7Rnnp5nRQbeZjLTn7\nj55Xc6CbXkFni3dEOnMFVk5H2OJDLgNKur73qs0hGmvlKnlvELEEHKtbXt367pgs\nqPk9GFQtPmey8SwVtlVM44VDx+j2wJ204sDj/JrIXFUHRg0Uu+sTn9yUhMPgK0c8\ncNeuGce1FqKdffoi/Pxfj/IcUW0GeMviLfreQ0Jtb7jiqFywPe2X1p8N1Xdpp9me\nVJR1aOECgYEA8YubqOPWpr14HnS8ztccR0b5WiEHxNPExa5VprEyzuN28L/2EykK\nZ3cNycejTwI3DuhivShe6SttKxnROf+jk2qecS1ZRcFvr+UQnJTC4YfrM3cKACh4\n1XzFoiw18hA4GnSuK13xChh4Gva5koLR0lzWtjxjjQf3nQH1ddVUbycCgYEA2xBV\nZxeNc/hrT0kye7OWterAIUfKnnSnZYFY91Xgj7z4RT+G3FTAhBwoO476hw15J3al\n5o+lOyJDW8uT+oa0p5qqvBrBbzbUO55KIPh4lmbTd2xbqycCnWTFYj2o0GLi4WVu\nXtoU8qDtppg7GTuUQ21pKzX81l0ty6XgjwChg3ECgYBfQkWzR5eBzrsul69Wi3M1\nkQIJz3j24OV7aJOS19NH0GE59Rqg19ComUUwzLDVGfSIxpEaNG+p2VyGYPoou27R\nVn0B+XZ5kh3v6pCwj+KDe00A0PN6uHtfBoQSvwjPXCIkHNwLclL7Pkcvqxnoc/s3\n0TFEUXCZUAkRPJKHVAimhQKBgGXedph2L2VahCxekYdMwCzgeXAAfoypGp7tQ33h\nBYhSC/HH1OLo1o2YumzX1FCxR0G+vu80pVWWXVR2mt3JfoDiP7sxhfo9uPvwY/Bp\nG0p1jqjeTtKMVX7zuYYxvisJkQ/Xpzecmlkp1Nm/uNvHBO9GFb3uYSEeO4mUHZTi\najlBAoGBAIF14vwlKndcY5f7oRuEjSfAVn8vo23cRSReMF86OXstO4Alm9iS/aa9\nXlPQkTvHlE+hFIagHvaqnGbPeglsnldThVKAXzp+/5Tdq1Y4GBz5WwjHDfA1m63s\npgMcx2y8dZRoBbawEBZE/mJb1Dbmw7Ct+hpMH6tBKspV5hc/WwAw\n-----END RSA PRIVATE KEY-----\n",
+      "stdin": "0000"
+    },
+
+    "response": {
+      "exit_status": 0,
+      "stdout": [
+        "9d56db799462c47d39914a6ed68da90c365551e6 refs/pull/2/head"
       ]
     }
   }
