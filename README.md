@@ -1,3 +1,5 @@
+:warning: This project is [deprecated](https://github.com/github/sre-lifecycle/issues/40) :warning:
+
 ### Nugget
 
 Nugget is a service for performing http and tcp integration tests. It uses [turd](https://github.com/joewilliams/turd/) under the covers to verify urls are responding properly. Kinda like pingdom, better in some ways, worse in others.
